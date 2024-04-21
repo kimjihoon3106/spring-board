@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url : jdbc:mysql:locallhost:3306/board
+    password: 3106
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
