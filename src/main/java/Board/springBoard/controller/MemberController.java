@@ -1,21 +1,17 @@
 package Board.springBoard.controller;
 
 import Board.springBoard.Dto.LoginDto;
-import Board.springBoard.Service.MemberService;
 import Board.springBoard.entity.Member;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 public class MemberController {
     @GetMapping ("/login")
-        public String getLogin(HttpServletRequest request, Model model) {
+    public String getLogin(HttpServletRequest request, Model model) {
 
         //현재 페이지를 가져와 세션에 저장
         String referer = request.getHeader("Referer");
@@ -24,12 +20,11 @@ public class MemberController {
         model.addAttribute("login",new LoginDto());
         return "member/login";
     }
-
     @PostMapping("/login")
     public String postLogin(@ModelAttribute("login") LoginDto loginDto, HttpServletRequest request, HttpSession session,Model model){
         boolean login = memberService.login(loginDto);
 
-        if(login){
+        if (login){
             String username = loginDto.getUsername();
             Member member = memberService.findByUsername(username);
             session.setAttribute("loginMember",member);

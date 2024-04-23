@@ -5,6 +5,7 @@ import Board.springBoard.entity.Member;
 import Board.springBoard.entity.MemberDto;
 import Board.springBoard.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @RequiredArgsConstructor
 @Slf4j
-public class MemberServicelmpl implements MemberService{
+@SuperBuilder(toBuilder = true)
+
+public class MemberServicelmpl implements MemberService {
 
     private final MemberRepository memberRepository;
     @Override

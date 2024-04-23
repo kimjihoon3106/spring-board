@@ -17,4 +17,4 @@ jpa:
 
   spring:
     jpa:
-      hibernate.ddl-auto=update
+      hibernate.ddl-auto = update
