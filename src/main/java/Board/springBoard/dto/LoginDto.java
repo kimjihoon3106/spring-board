@@ -1,4 +1,4 @@
-package Board.springBoard.Dto;
+package Board.springBoard.dto;
 
 import lombok.Data;
 

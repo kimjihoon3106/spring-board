@@ -1,6 +1,6 @@
 package Board.springBoard.controller;
 
-import Board.springBoard.Dto.LoginDto;
+import Board.springBoard.dto.LoginDto;
 import Board.springBoard.entity.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;

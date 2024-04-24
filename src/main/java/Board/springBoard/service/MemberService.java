@@ -1,4 +1,4 @@
-package Board.springBoard.Service;
+package Board.springBoard.service;
 
 import Board.springBoard.entity.MemberDto;
 
