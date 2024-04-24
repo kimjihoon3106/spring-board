@@ -2,7 +2,10 @@ package Board.springBoard.controller;
 
 import Board.springBoard.dto.LoginDto;
 import Board.springBoard.entity.Member;
+import Board.springBoard.service.MemberService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,8 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Slf4j
+@Controller
+@RequiredArgsConstructor
 public class MemberController {
-    @GetMapping ("/login")
+    private final MemberService memberService;
+
+    @GetMapping("/login")
     public String getLogin(HttpServletRequest request, Model model) {
 
         //현재 페이지를 가져와 세션에 저장
