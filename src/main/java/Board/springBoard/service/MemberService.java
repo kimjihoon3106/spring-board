@@ -1,8 +1,8 @@
 package Board.springBoard.service;
 
+import Board.springBoard.entity.Member;
 import Board.springBoard.entity.MemberDto;
 
-import java.lang.reflect.Member;
 
 public interface MemberService {
         Member saveEntity(Member member);

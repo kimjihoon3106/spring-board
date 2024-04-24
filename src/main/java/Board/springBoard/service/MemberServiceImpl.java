@@ -14,16 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Slf4j
 
 public class MemberServiceImpl implements MemberService {
-
     private final MemberRepository memberRepository;
+
     @Override
     public Member saveEntity(Member member){
         return memberRepository.save(member);
-    }
-
-    @Override
-    public Member saveEntity(Member member) {
-        return null;
     }
 
     @Override
