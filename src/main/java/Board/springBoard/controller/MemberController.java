@@ -2,6 +2,7 @@ package Board.springBoard.controller;
 
 import Board.springBoard.Dto.LoginDto;
 import Board.springBoard.entity.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+@Slf4j
 public class MemberController {
     @GetMapping ("/login")
     public String getLogin(HttpServletRequest request, Model model) {
@@ -22,7 +24,7 @@ public class MemberController {
     }
     @PostMapping("/login")
     public String postLogin(@ModelAttribute("login") LoginDto loginDto, HttpServletRequest request, HttpSession session,Model model){
-        boolean login = memberService.login(loginDto);
+        boolean login = .login(loginDto);
 
         if (login){
             String username = loginDto.getUsername();
