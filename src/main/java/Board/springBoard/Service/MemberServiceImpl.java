@@ -30,21 +30,4 @@ public class MemberServiceImpl implements MemberService {
                 .build();
         return saveEntity(member);
     }
-
-    @Override
-    public Member findByUsername(String username) {
-        return memberRepository.findByUsername(username);
-    }
-
-    public boolean login(LoginDto loginDto){
-        String username = loginDto.getUsername();
-        String password = loginDto.getPassword();
-        Member byUsername = memberRepository.findByUsername(username);
-        if(byUsername != null){
-            if (byUsername.getPassword().equals(password)){
-                return true;
-            }
-        }
-        return false;
-    }
 }

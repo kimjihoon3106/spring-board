@@ -24,7 +24,7 @@ public class MemberController {
     }
     @PostMapping("/login")
     public String postLogin(@ModelAttribute("login") LoginDto loginDto, HttpServletRequest request, HttpSession session,Model model){
-        boolean login = .login(loginDto);
+        boolean login = memberService.login(loginDto);
 
         if (login){
             String username = loginDto.getUsername();
