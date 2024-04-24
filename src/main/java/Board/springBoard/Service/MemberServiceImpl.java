@@ -1,6 +1,5 @@
 package Board.springBoard.Service;
 
-import Board.springBoard.Dto.LoginDto;
 import Board.springBoard.entity.Member;
 import Board.springBoard.entity.MemberDto;
 import Board.springBoard.repository.MemberRepository;
@@ -20,6 +19,11 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Member saveEntity(Member member){
         return memberRepository.save(member);
+    }
+
+    @Override
+    public Member saveEntity(Member member) {
+        return null;
     }
 
     @Override
