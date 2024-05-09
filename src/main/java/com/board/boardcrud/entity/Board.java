@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Setter
 @Getter // get 함수를 일괄적으로 만들어줍니다.
@@ -33,7 +36,7 @@ public class Board extends Timestamped {
 
     @ManyToOne
     @JoinColumn(name = "userId")
-    private  user;
+    private  User user;
 
     @JsonIgnore
     @OneToMany(mappedBy = "board")

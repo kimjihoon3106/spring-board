@@ -66,4 +66,16 @@ public class BoardService {
         boardRepository.deleteById(id);
         return id;
     }
+
+    // 비밀번호 일치 확인
+    public boolean checkPassword(Long id, String inputPassword) {
+        Board board = boardRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("해당 아이디가 존재하지 않습니다.")
+        );
+        if (inputPassword.equals(board.getPassword())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
