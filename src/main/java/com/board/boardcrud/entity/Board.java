@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @Getter // get 함수를 일괄적으로 만들어줍니다.
 @NoArgsConstructor // 기본 생성자를 만들어줍니다.
-@Entity // DB 테이블 역할을 합니다.
+@Entity(name = "users") // DB 테이블 역할을 합니다.
 public class Board extends Timestamped {
     // 글 고유 아이디
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,14 +33,6 @@ public class Board extends Timestamped {
     // 비밀번호
     @Column(nullable = false)
     private String password;
-
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private  User user;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "board")
-    List<Comment> comments = new ArrayList<>();
 
     // requestDto 정보를 가져와서 entity 만들 때 사용
     public Board(BoardRequestDto requestDto) {
